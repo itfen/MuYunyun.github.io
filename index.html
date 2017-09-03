@@ -157,15 +157,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>下载mongodb<br><a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">https://www.mongodb.com/download-center#community</a> 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了<br>  curl -O <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz" target="_blank" rel="external">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz</a> </li>
-</ul>
+        <h1 id="下载mongodb"><a href="#下载mongodb" class="headerlink" title="下载mongodb"></a>下载mongodb</h1><p>  <a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">https://www.mongodb.com/download-center#community</a> 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了<br>    curl -O <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz" target="_blank" rel="external">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz</a> </p>
 <p><img src="https://itfen.github.io/img/mongodb/1.jpg" alt="下载MongoDB"></p>
-<ul>
-<li><p>解压</p>
-<p><code>tar -zxvf mongodb-linux-x86_64-3.0.6.tgz -C /usr/local/</code></p>
-</li>
-</ul>
+<h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><p>  <code>tar -zxvf mongodb-linux-x86_64-3.0.6.tgz -C /usr/local/</code></p>
 <p><img src="https://itfen.github.io/img/mongodb/3.jpg" alt=""></p>
 <p>  解压到/usr/local目录下，由于它的名字太长了，我改一下文件夹名</p>
 <p>  <code>mv /usr/local/mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb</code></p>
@@ -173,22 +167,15 @@
 <p>   进入到/usr/local/mongodb 中建立一下data目录</p>
 <pre><code>`mkdir -p /data/db`
 </code></pre><p><img src="https://itfen.github.io/img/mongodb/10.jpg" alt=""></p>
-<ul>
-<li><p>将bin目录加入PATH路径  </p>
-<p> <code>vi /etc/profile</code></p>
-<p>   在最后一行加入<br><code>export PATH=/usr/local/mongodb/bin:$PATH</code></p>
-</li>
-</ul>
+<h1 id="将bin目录加入PATH路径"><a href="#将bin目录加入PATH路径" class="headerlink" title="将bin目录加入PATH路径"></a>将bin目录加入PATH路径</h1><p>   <code>vi /etc/profile</code></p>
+<pre><code>在最后一行加入
+</code></pre><p> <code>export PATH=/usr/local/mongodb/bin:$PATH</code></p>
 <p>   保存后 使用<code>source /etc/profile</code>命令检测无报错则说明成功了。</p>
 <p><img src="https://itfen.github.io/img/mongodb/3.jpg" alt=""> </p>
 <p>   将这个bin目录加到PATH路径之后可以在任何目录下执行mongoDB的命令了。</p>
-<ul>
-<li>启动MongoDB<br>执行mongod命令启动.启动完之后会看到有端口 27017</li>
-</ul>
+<h1 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h1><p>  执行mongod命令启动.启动完之后会看到有端口 27017</p>
 <p><img src="https://itfen.github.io/img/mongodb/6.jpg" alt=""> </p>
-<ul>
-<li>连接MongoDB<br>我用另外一台电脑连接这个服务器，由于我的是linux 默认防火墙是阻挡了这个端口了，所以要先开放端口，并且是指定192.168.1.X段的IP能连接。</li>
-</ul>
+<h1 id="连接MongoDB"><a href="#连接MongoDB" class="headerlink" title="连接MongoDB"></a>连接MongoDB</h1><p>  我用另外一台电脑连接这个服务器，由于我的是linux 默认防火墙是阻挡了这个端口了，所以要先开放端口，并且是指定192.168.1.X段的IP能连接。</p>
 <pre><code>iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 27017 -j ACCEPT
 iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 28017 -j ACCEPT
 service iptables save
