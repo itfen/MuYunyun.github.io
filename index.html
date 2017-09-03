@@ -160,19 +160,19 @@
         <ul>
 <li>下载mongodb<br><a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">https://www.mongodb.com/download-center#community</a> 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了<br>  curl -O <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz" target="_blank" rel="external">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz</a> </li>
 </ul>
-<p><img src="./img/mongodb/1.jpg" alt="下载MongoDB"></p>
+<p><img src="https://itfen.github.io/img/mongodb/1.jpg" alt="下载MongoDB"></p>
 <ul>
 <li><p>解压</p>
 <p><code>tar -zxvf mongodb-linux-x86_64-3.0.6.tgz -C /usr/local/</code></p>
 </li>
 </ul>
-<p><img src="./img/mongodb/3.jpg" alt=""></p>
+<p><img src="https://itfen.github.io/img/mongodb/3.jpg" alt=""></p>
 <p>  解压到/usr/local目录下，由于它的名字太长了，我改一下文件夹名</p>
 <p>  <code>mv /usr/local/mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb</code></p>
-<p><img src="./img/mongodb/4.jpg" alt=""></p>
+<p><img src="https://itfen.github.io/img/mongodb/4.jpg" alt=""></p>
 <p>   进入到/usr/local/mongodb 中建立一下data目录</p>
 <pre><code>`mkdir -p /data/db`
-</code></pre><p><img src="./img/mongodb/10.jpg" alt=""></p>
+</code></pre><p><img src="https://itfen.github.io/img/mongodb/10.jpg" alt=""></p>
 <ul>
 <li><p>将bin目录加入PATH路径  </p>
 <p> <code>vi /etc/profile</code></p>
@@ -180,19 +180,20 @@
 </li>
 </ul>
 <p>   保存后 使用<code>source /etc/profile</code>命令检测无报错则说明成功了。</p>
-<p><img src="./img/mongodb/3.jpg" alt=""> </p>
+<p><img src="https://itfen.github.io/img/mongodb/3.jpg" alt=""> </p>
 <p>   将这个bin目录加到PATH路径之后可以在任何目录下执行mongoDB的命令了。</p>
 <ul>
 <li>启动MongoDB<br>执行mongod命令启动.启动完之后会看到有端口 27017</li>
 </ul>
-<p><img src="./img/mongodb/6.jpg" alt=""> </p>
+<p><img src="https://itfen.github.io/img/mongodb/6.jpg" alt=""> </p>
 <ul>
-<li>连接MongoDB<br>我用另外一台电脑连接这个服务器，由于我的是linux 默认防火墙是阻挡了这个端口了，所以要先开放端口，并且是指定192.168.1.X段的IP能连接。<pre><code>iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 27017 -j ACCEPT
+<li>连接MongoDB<br>我用另外一台电脑连接这个服务器，由于我的是linux 默认防火墙是阻挡了这个端口了，所以要先开放端口，并且是指定192.168.1.X段的IP能连接。</li>
+</ul>
+<pre><code>iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 27017 -j ACCEPT
 iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 28017 -j ACCEPT
 service iptables save
-</code></pre>我在另外一台电脑上使用robo软件连接测试 可以看到是可以连接的，并且服务器上也显示了有客户端连接了。</li>
-</ul>
-<p> <img src="./img/mongodb/8.jpg" alt=""> </p>
+</code></pre><p> 我在另外一台电脑上使用robo软件连接测试 可以看到是可以连接的，并且服务器上也显示了有客户端连接了。</p>
+<p> <img src="https://itfen.github.io/img/mongodb/8.jpg" alt=""> </p>
 
       
 
