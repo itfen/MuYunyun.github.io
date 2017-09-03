@@ -6,14 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://itfen.github.io">
-  <title>Archives: 2017 | unitfen的博客</title>
+  <title>安装MongoDB | unitfen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="unitfen的博客">
-<meta property="og:url" content="https://itfen.github.io/archives/2017/index.html">
+  <meta name="description" content="下载mongodbhttps://www.mongodb.com/download-center#community 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了  curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz     解压 tar -zxvf mongodb-linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装MongoDB">
+<meta property="og:url" content="https://itfen.github.io/2017/09/03/安装MongoDB/index.html">
 <meta property="og:site_name" content="unitfen的博客">
+<meta property="og:description" content="下载mongodbhttps://www.mongodb.com/download-center#community 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了  curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz     解压 tar -zxvf mongodb-linux">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/1.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/3.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/4.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/10.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/3.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/6.jpg">
+<meta property="og:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/8.jpg">
+<meta property="og:updated_time" content="2017-09-03T01:08:38.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unitfen的博客">
+<meta name="twitter:title" content="安装MongoDB">
+<meta name="twitter:description" content="下载mongodbhttps://www.mongodb.com/download-center#community 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了  curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz     解压 tar -zxvf mongodb-linux">
+<meta name="twitter:image" content="https://itfen.github.io/2017/09/03/安装MongoDB/img/mongodb/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="unitfen的博客" type="application/atom+xml">
   
@@ -135,76 +147,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-安装MongoDB" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      安装MongoDB
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/安装MongoDB/" class="archive-article-date">
+
+        
+        <a href="/2017/09/03/安装MongoDB/" class="archive-article-date">
   	<time datetime="2017-09-03T00:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/安装MongoDB/">安装MongoDB</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>下载mongodb<br><a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">https://www.mongodb.com/download-center#community</a> 根据系统下指定的版本。由于我的是Centos的，所以我直接用命令行下载了<br>  curl -O <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz" target="_blank" rel="external">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz</a> </li>
+</ul>
+<p><img src="./img/mongodb/1.jpg" alt="下载MongoDB"></p>
+<ul>
+<li><p>解压</p>
+<p><code>tar -zxvf mongodb-linux-x86_64-3.0.6.tgz -C /usr/local/</code></p>
+</li>
+</ul>
+<p><img src="./img/mongodb/3.jpg" alt=""></p>
+<p>  解压到/usr/local目录下，由于它的名字太长了，我改一下文件夹名</p>
+<p>  <code>mv /usr/local/mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb</code></p>
+<p><img src="./img/mongodb/4.jpg" alt=""></p>
+<p>   进入到/usr/local/mongodb 中建立一下data目录</p>
+<pre><code>`mkdir -p /data/db`
+</code></pre><p><img src="./img/mongodb/10.jpg" alt=""></p>
+<ul>
+<li><p>将bin目录加入PATH路径  </p>
+<p> <code>vi /etc/profile</code></p>
+<p>   在最后一行加入<br><code>export PATH=/usr/local/mongodb/bin:$PATH</code></p>
+</li>
+</ul>
+<p>   保存后 使用<code>source /etc/profile</code>命令检测无报错则说明成功了。</p>
+<p><img src="./img/mongodb/3.jpg" alt=""> </p>
+<p>   将这个bin目录加到PATH路径之后可以在任何目录下执行mongoDB的命令了。</p>
+<ul>
+<li>启动MongoDB<br>执行mongod命令启动.启动完之后会看到有端口 27017</li>
+</ul>
+<p><img src="./img/mongodb/6.jpg" alt=""> </p>
+<ul>
+<li>连接MongoDB<br>我用另外一台电脑连接这个服务器，由于我的是linux 默认防火墙是阻挡了这个端口了，所以要先开放端口，并且是指定192.168.1.X段的IP能连接。<pre><code>iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 27017 -j ACCEPT
+iptables -I INPUT -s 192.168.1.0/24 -p tcp --dport 28017 -j ACCEPT
+service iptables save
+</code></pre>我在另外一台电脑上使用robo软件连接测试 可以看到是可以连接的，并且服务器上也显示了有客户端连接了。</li>
+</ul>
+<p> <img src="./img/mongodb/8.jpg" alt=""> </p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://itfen.github.io/2017/09/03/安装MongoDB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/20/eclipse-增加反编译jad/" class="archive-article-date">
-  	<time datetime="2017-08-20T05:43:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/20/eclipse-增加反编译jad/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">eclipse 增加反编译JAD</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/20/eclipse-增加反编译jad/">eclipse 增加反编译JAD</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -227,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
