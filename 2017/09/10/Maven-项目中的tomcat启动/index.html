@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://itfen.github.io">
-  <title>Archives | unitfen的博客</title>
+  <title>Maven 项目中的tomcat启动 | unitfen的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="unitfen的博客">
-<meta property="og:url" content="https://itfen.github.io/archives/index.html">
+  <meta name="description" content="最近在使用maven 记录一下 使用tomcat运行 maven 项目的操作  一、修改项目的pom.xml文件，修改项目打包格式为war二、pom.xml文件中添加启动相关xml代码&amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;web&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apach">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 项目中的tomcat启动">
+<meta property="og:url" content="https://itfen.github.io/2017/09/10/Maven-项目中的tomcat启动/index.html">
 <meta property="og:site_name" content="unitfen的博客">
+<meta property="og:description" content="最近在使用maven 记录一下 使用tomcat运行 maven 项目的操作  一、修改项目的pom.xml文件，修改项目打包格式为war二、pom.xml文件中添加启动相关xml代码&amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;web&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apach">
+<meta property="og:updated_time" content="2017-09-10T16:11:02.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unitfen的博客">
+<meta name="twitter:title" content="Maven 项目中的tomcat启动">
+<meta name="twitter:description" content="最近在使用maven 记录一下 使用tomcat运行 maven 项目的操作  一、修改项目的pom.xml文件，修改项目打包格式为war二、pom.xml文件中添加启动相关xml代码&amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;web&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apach">
   
     <link rel="alternative" href="/atom.xml" title="unitfen的博客" type="application/atom+xml">
   
@@ -135,103 +139,152 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Maven-项目中的tomcat启动" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Maven 项目中的tomcat启动
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/10/Maven-项目中的tomcat启动/" class="archive-article-date">
+
+        
+        <a href="/2017/09/10/Maven-项目中的tomcat启动/" class="archive-article-date">
   	<time datetime="2017-09-10T15:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/10/Maven-项目中的tomcat启动/">Maven 项目中的tomcat启动</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在使用maven 记录一下 使用tomcat运行 maven 项目的操作 </p>
+<h1 id="一、修改项目的pom-xml文件，修改项目打包格式为war"><a href="#一、修改项目的pom-xml文件，修改项目打包格式为war" class="headerlink" title="一、修改项目的pom.xml文件，修改项目打包格式为war"></a>一、修改项目的pom.xml文件，修改项目打包格式为war</h1><h1 id="二、pom-xml文件中添加启动相关xml代码"><a href="#二、pom-xml文件中添加启动相关xml代码" class="headerlink" title="二、pom.xml文件中添加启动相关xml代码"></a>二、pom.xml文件中添加启动相关xml代码</h1><pre><code>&lt;build&gt;
+&lt;finalName&gt;web&lt;/finalName&gt;
+&lt;plugins&gt;
+&lt;plugin&gt;
+&lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+&lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
 
-        <div class="article-info info-on-right">
-          
-          
+&lt;version&gt;2.2&lt;/version&gt;
+&lt;configuration&gt;
 
+&lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;
+
+&lt;port&gt;8088&lt;/port&gt;
+
+&lt;path&gt;/test01&lt;/path&gt;&lt;!--应用的部署位置--&gt;
+&lt;/configuration&gt;
+&lt;/plugin&gt;
+&lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre><h1 id="三、-选中项目右键点击maven-build"><a href="#三、-选中项目右键点击maven-build" class="headerlink" title="三、 选中项目右键点击maven build.."></a>三、 选中项目右键点击maven build..</h1><h1 id="四、在-run-configuration-中的-Goals-中输入-tomcat7-run"><a href="#四、在-run-configuration-中的-Goals-中输入-tomcat7-run" class="headerlink" title="四、在 run configuration 中的 Goals 中输入     tomcat7:run"></a>四、在 run configuration 中的 Goals 中输入     <strong>tomcat7:run</strong></h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://itfen.github.io/2017/09/10/Maven-项目中的tomcat启动/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/安装MongoDB/" class="archive-article-date">
-  	<time datetime="2017-09-03T00:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/03/安装MongoDB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">安装MongoDB</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/安装MongoDB/">安装MongoDB</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/20/eclipse-增加反编译jad/" class="archive-article-date">
-  	<time datetime="2017-08-20T05:43:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/20/eclipse-增加反编译jad/">eclipse 增加反编译JAD</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -254,8 +307,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
